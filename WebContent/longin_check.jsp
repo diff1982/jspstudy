@@ -11,9 +11,9 @@
 
 <%!
 	//创建数据驱动
-	final String  DBDRIVER="org.gjt.mm.mysql.Driver" ;
+	final String DBDIRVER = "org.gjt.mm.mysql.Driver";
 	//指定数据库连接
-    final String DBURL ="jdbc:mysql://localhost:3306/klsps";
+    final String DBURL = "jdbc:mysql://localhost:3306/klsps?useSSL=true";
 	//数据库用户
 	final String DBUSER = "root";
 	//数据库密码
@@ -33,7 +33,7 @@
 <%
 	try{
 		//加载驱动程序
-		Class.forName(DBDRIVER);
+		Class.forName(DBDIRVER);
 		//获得数据库连接
 		conn = DriverManager.getConnection(DBURL,DBUSER,DBPASS);
 		//定义查询语句：输入正确的id和password，返回name
@@ -49,6 +49,7 @@
 		if(rs.next()){
 			//返回用户name
 			name = rs.getString(1);
+			System.out.println(name);
 			//标志位置1
 			flag = true;
 		}
@@ -67,13 +68,13 @@ finally{
 	//标志位为1 页面跳转至login_sucess.jsp
 if(flag){
 %>
-<jsp:forward page = "login_sucess.jsp">
+<jsp:forward page ="login_sucess.jsp">
 	<jsp:param name = "uname" value = "<%=name%>"/>
 </jsp:forward> 
 <%
 }else{
 %>
-<jsp:forward page = "login_failure.htm"/>
+<jsp:forward page ="login_failure.htm"/>
 <% }%>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
 <center>
 <h1>登陆成功！</h1>
-<h2><font color="red"><%=request.getParameter("uname") %> Welcome!</h2>
+<h2><font color="red"><%=request.getParameter("uname") %> Welcome!</font></h2>
 </center>
 
 </body>
