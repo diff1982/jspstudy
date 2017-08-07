@@ -5,6 +5,7 @@
 	<projects>
 		<project>.settings</project>
 		<project>Servers</project>
+		<project>spring-web-4.1.5.RELEASE</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
